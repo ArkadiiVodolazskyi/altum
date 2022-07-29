@@ -9,7 +9,7 @@
 			<?= $speaker->post_title; ?>
 		</h3>
 		<div class="image">
-			<img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= $speaker->post_title; ?>">
+			<img src="<?= get_the_post_thumbnail_url($speaker); ?>" alt="<?= $speaker->post_title; ?>">
 		</div>
 		<div class="content">
 			<?= $speaker->post_content; ?>

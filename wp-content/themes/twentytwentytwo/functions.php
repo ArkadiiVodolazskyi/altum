@@ -85,3 +85,54 @@ function theme_setup() {
 	add_action( 'wp_enqueue_scripts', 'register_scripts' );
 }
 add_action( 'after_setup_theme', 'theme_setup', 9999 );
+
+// Get speakers
+
+function get_speakers($term_params = []) {
+
+	$tax_query = [];
+	if (count($term_params)) {
+		foreach ($term_params as $taxonomy => $terms) {
+			if ($terms && $terms !== 'all') {
+				$tax_query[] = [
+					'taxonomy' => $taxonomy,
+					'field' => 'slug',
+					'terms' => $terms
+				];
+			}
+		}
+	}
+
+  $speakers = get_posts([
+		'post_type' => 'speakers',
+		'posts_per_page' => -1,
+    'order_by' => 'date',
+    'order' => 'desc',
+		'tax_query' => $tax_query
+	]);
+
+	return $speakers;
+}
+
+// Filter speakers
+
+function filter_speakers() {
+	$term_params = [
+		'positions' => $_POST['positions'],
+		'countries' => $_POST['countries']
+	];
+	$speakers = get_speakers($term_params);
+
+	if (count($speakers) > 0) {
+		foreach ($speakers as $speaker) {
+			get_template_part('parts/speaker-card', null, ['speaker' => $speaker]);
+		}
+	} else { ?>
+		<div class="no_posts">No speakers</div>
+	<?php }
+
+	wp_reset_postdata();
+	die();
+}
+add_action('wp_ajax_filter_speakers', 'filter_speakers');
+add_action('wp_ajax_nopriv_filter_speakers', 'filter_speakers');
