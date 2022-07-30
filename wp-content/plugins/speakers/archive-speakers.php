@@ -2,13 +2,16 @@
 	/* Template Name: Speakers */
 	get_header();
 	$speakers = get_speakers();
+	$are_speakers_filters = get_option( 'are_speakers_filters' );
 ?>
 
 <section class="archive speakers">
 	<div class="wrapper">
 		<?php if (count($speakers) > 0) { ?>
 
-			<?php get_template_part('parts/speaker-filters'); ?>
+			<?php if ($are_speakers_filters === 'on') { ?>
+				<?php get_template_part('parts/speaker-filters'); ?>
+			<?php } ?>
 
 			<div class="cards">
 				<?php foreach ($speakers as $speaker) {
