@@ -1,0 +1,54 @@
+header
+	padding: 36px 0 25px
+	font-weight: 600
+	font-size: 14px
+	line-height: 28px
+	.wrapper
+		display: flex
+		align-items: center
+		justify-content: space-between
+	nav
+		display: flex
+		align-items: center
+		justify-content: space-between
+	.logo
+		fill: $logo
+		&:hover
+			fill: $text-accent
+	.links
+		margin-left: 100px
+		li
+			&:not(:first-child)
+				margin-left: 50px
+	.right
+		display: flex
+		align-items: center
+	.language_switcher
+		margin-left: 36px
+		position: relative
+		&:hover .other
+			opacity: 1
+			visibility: visible
+		.current
+			display: inline-flex
+			align-items: center
+			fill: none
+			stroke: #404040
+			user-select: none
+			svg
+				margin-left: 5px
+		.other
+			position: absolute
+			z-index: 100
+			top: 100%
+			left: 50%
+			transform: translate(-50%, 0)
+			width: 100%
+			transition: all .25s ease
+			opacity: 0
+			visibility: hidden
+	.hamburger
+		display: none
+		fill: $text-primary
+		&:hover
+			fill: $text-accent

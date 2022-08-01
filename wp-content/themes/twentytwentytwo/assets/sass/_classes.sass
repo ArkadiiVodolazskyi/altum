@@ -1,0 +1,48 @@
+.wrapper
+	max-width: 1500px
+	margin: 0 auto
+
+.button
+	font-size: 14px
+	line-height: 30px
+	font-weight: 600
+	padding: 10px
+	width: 250px
+	max-width: 100%
+	text-transform: uppercase
+	&.light
+		border: 1px solid $text-primary
+		&:hover
+			background-color: $text-accent
+			border-color: $text-accent
+	&.dark
+		background-color: $text-primary
+		color: $w
+		&:hover
+			background-color: $text-accent
+
+b.accent
+	color: $text-accent
+	font-weight: inherit
+
+a.outer_link
+	display: flex
+	align-items: center
+	font-weight: 600
+	font-size: 14px
+	line-height: 28px
+	text-transform: uppercase
+	width: max-content
+	max-width: 100%
+	color: #202020
+	fill: #202020
+	stroke: #202020
+	&:hover
+		color: $text-accent
+		fill: $text-accent
+		stroke: $text-accent
+	svg
+		margin-right: 20px
+
+.mobile
+	display: none

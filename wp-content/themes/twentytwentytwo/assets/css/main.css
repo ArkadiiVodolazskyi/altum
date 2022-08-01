@@ -50,6 +50,66 @@ a:hover {
   color: #28B7CA;
 }
 
+.wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.button {
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: 600;
+  padding: 10px;
+  width: 250px;
+  max-width: 100%;
+  text-transform: uppercase;
+}
+.button.light {
+  border: 1px solid #323232;
+}
+.button.light:hover {
+  background-color: #28B7CA;
+  border-color: #28B7CA;
+}
+.button.dark {
+  background-color: #323232;
+  color: #FFFFFF;
+}
+.button.dark:hover {
+  background-color: #28B7CA;
+}
+
+b.accent {
+  color: #28B7CA;
+  font-weight: inherit;
+}
+
+a.outer_link {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 28px;
+  text-transform: uppercase;
+  width: max-content;
+  max-width: 100%;
+  color: #202020;
+  fill: #202020;
+  stroke: #202020;
+}
+a.outer_link:hover {
+  color: #28B7CA;
+  fill: #28B7CA;
+  stroke: #28B7CA;
+}
+a.outer_link svg {
+  margin-right: 20px;
+}
+
+.mobile {
+  display: none;
+}
+
 header {
   padding: 36px 0 25px;
   font-weight: 600;
@@ -227,66 +287,6 @@ footer .bbs .logo_bbs {
   width: max-content;
   max-width: 100%;
   margin: 0 auto;
-}
-
-.wrapper {
-  max-width: 1500px;
-  margin: 0 auto;
-}
-
-.button {
-  font-size: 14px;
-  line-height: 30px;
-  font-weight: 600;
-  padding: 10px;
-  width: 250px;
-  max-width: 100%;
-  text-transform: uppercase;
-}
-.button.light {
-  border: 1px solid #323232;
-}
-.button.light:hover {
-  background-color: #28B7CA;
-  border-color: #28B7CA;
-}
-.button.dark {
-  background-color: #323232;
-  color: #FFFFFF;
-}
-.button.dark:hover {
-  background-color: #28B7CA;
-}
-
-b.accent {
-  color: #28B7CA;
-  font-weight: inherit;
-}
-
-a.outer_link {
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 28px;
-  text-transform: uppercase;
-  width: max-content;
-  max-width: 100%;
-  color: #202020;
-  fill: #202020;
-  stroke: #202020;
-}
-a.outer_link:hover {
-  color: #28B7CA;
-  fill: #28B7CA;
-  stroke: #28B7CA;
-}
-a.outer_link svg {
-  margin-right: 20px;
-}
-
-.mobile {
-  display: none;
 }
 
 @media (max-width: 480px) {

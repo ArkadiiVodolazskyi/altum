@@ -8,7 +8,7 @@
 <main class="archive_speakers">
 	<div class="wrapper">
 		<?php if ($are_speakers_filters === 'on') { ?>
-			<?php get_template_part('parts/speaker-filters'); ?>
+			<?php load_template(dirname( __FILE__ ) . '/parts/speaker-filters.php', false, ['speaker' => $speaker]); ?>
 		<?php } ?>
 
 		<section class="archive speakers">
@@ -16,7 +16,7 @@
 
 				<div class="cards">
 					<?php foreach ($speakers as $speaker) {
-						get_template_part('parts/speaker-card', null, ['speaker' => $speaker]);
+						load_template(dirname( __FILE__ ) . '/parts/speaker-card.php', false, ['speaker' => $speaker]);
 					} ?>
 				</div>
 

@@ -1,0 +1,34 @@
+footer
+	.wrapper
+		display: grid
+		grid-template-areas: "logo nav outer_link" "bbs bbs bbs"
+		background: linear-gradient(90deg, #E6E9F0 0%, #EEF1F5 100%)
+		padding: 50px 0 60px
+		justify-content: space-around
+		align-items: center
+	.logo
+		grid-area: logo
+		fill: $logo
+		&:hover
+			fill: $text-accent
+	nav
+		grid-area: nav
+		font-weight: 600
+		font-size: 14px
+		line-height: 28px
+	.links
+		display: flex
+		align-items: center
+		li
+			&:not(:first-child)
+				margin-left: 50px
+	.outer_link
+		grid-area: outer_link
+	.bbs
+		grid-area: bbs
+		margin-top: 100px
+		.logo_bbs
+			display: block
+			width: max-content
+			max-width: 100%
+			margin: 0 auto
