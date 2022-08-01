@@ -22,6 +22,7 @@ function register_scripts() {
 function theme_setup() {
 	add_action( 'wp_enqueue_scripts', 'register_styles' );
 	add_action( 'wp_enqueue_scripts', 'register_scripts' );
+	add_theme_support ( 'widgets' );
 }
 add_action( 'after_setup_theme', 'theme_setup', 9999 );
 
