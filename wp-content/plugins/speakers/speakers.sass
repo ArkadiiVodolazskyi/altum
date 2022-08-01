@@ -1,0 +1,161 @@
+// sass -w -q --no-source-map --update --style=expanded wp-content\plugins\speakers\speakers.sass:wp-content\plugins\speakers\speakers.css
+
+$trs: #00000000
+$b: #000000
+$w: #FFFFFF
+$bg-primary: $w
+$text-primary: #323232
+$text-secondary: #606060
+$text-accent: #28B7CA
+$logo: #065C9E
+
+main.archive_speakers
+	margin: 50px 0 100px
+	transition: all .3s ease
+	.wrapper
+		display: grid
+		grid-template-areas: "aside speakers"
+		grid-template-columns: 16em 1fr
+	aside
+		grid-area: aside
+		padding: 1em 3em 0 0
+	.filters
+		display: flex
+		flex-direction: column
+		> *:not(:first-child)
+			margin-top: 1.5em
+	select
+		padding: 1em
+		border-radius: 1em
+		cursor: pointer
+		border: 2px solid $text-secondary
+		background: none
+		transition: all .3s ease
+		&:hover
+			border-color: $text-accent
+	.speakers
+		grid-area: speakers
+	.title
+		font-weight: 900
+		font-size: 36px
+	.cards
+		margin-top: 1em
+		display: grid
+		grid-template-columns: repeat(4, 1fr)
+		gap: 2em
+		position: relative
+		&::before, &::after
+			transition: all .3s ease
+			opacity: 0
+			visibility: hidden
+		&::before
+			content: ''
+			position: absolute
+			z-index: 2500
+			width: 2.5em
+			height: 2.5em
+			border-radius: 50%
+			border-top: 3px solid rgba($text-accent, .7)
+			border-left: 2px solid $text-accent
+			top: 7em
+			left: 50%
+			opacity: 0
+			transform: translate(-50%, 0) scale(0)
+			animation: appear_spinner .4s ease forwards, loading_spinner 1s .3s linear infinite
+		&::after
+			content: ''
+			position: absolute
+			z-index: 100
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 100%
+			background-color: rgba(#fff, .1)
+			backdrop-filter: blur(3px)
+		&.loading
+			&::before, &::after
+				opacity: 1
+				visibility: visible
+	.card
+		padding: 1em
+		box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1)
+		border-radius: 8px
+	.thumbnail
+		width: 100%
+	.info
+		padding: 0 1em 1em
+
+section.single.speaker
+	margin: 50px 0 200px
+	.wrapper
+		max-width: 1100px
+		display: grid
+		grid-template-areas: "all_speakers all_speakers" "title image_wrapper" "info image_wrapper" "sessions sessions"
+		grid-template-columns: 600px 500px
+		grid-template-rows: auto auto 1fr auto
+	.all_speakers
+		margin-bottom: 50px
+		grid-area: all_speakers
+		display: flex
+		align-items: center
+		text-transform: uppercase
+		font-weight: 700
+		font-size: 12px
+		fill: $text-primary
+		&:hover
+			fill: $text-accent
+		svg
+			margin-right: 20px
+	.title
+		grid-area: title
+		font-weight: 700
+		font-size: 24px
+		line-height: 34px
+		padding-right: 130px
+	.image_wrapper
+		grid-area: image_wrapper
+	.info
+		grid-area: info
+		margin-top: 30px
+		font-size: 16px
+		line-height: 22px
+		padding-right: 130px
+	.sessions
+		grid-area: sessions
+		margin-top: 50px
+		h4
+			font-weight: 900
+			font-size: 24px
+			line-height: 30px
+		ul
+			margin-top: 50px
+			li
+				display: block
+				&:not(:first-child)
+					margin-top: 40px
+				a
+					text-decoration: underline
+
+@keyframes appear_spinner
+	0%
+		opacity: 0
+		transform: translate(-50%, -50%) scale(0)
+	100%
+		opacity: 1
+		transform: translate(-50%, -50%) scale(1)
+
+@keyframes loading_spinner
+	0%
+		transform: translate(-50%, -50%) rotate(0deg) scale(1)
+		border-top: 3px solid rgba($text-accent, .7)
+		border-left: 2px solid $text-accent
+	50%
+		transform: translate(-50%, -50%) rotate(180deg) scale(1.06)
+		border-top: 5px solid rgba($text-accent, .9)
+		border-left: 5px solid $text-accent
+	100%
+		transform: translate(-50%, -50%) rotate(360deg) scale(1)
+		border-top: 3px solid rgba($text-accent, .7)
+		border-left: 2px solid $text-accent

@@ -15,16 +15,20 @@
 	class="card speaker"
 	href="<?= get_permalink( $speaker ); ?>"
 >
-	<img
-		class="thumbnail"
-		src="<?= get_the_post_thumbnail_url($speaker); ?>"
-		alt="<?= $speaker->post_title; ?>"
-	>
-	<h4 class="name">
-		<?= $speaker->post_title; ?>
-	</h4>
+	<div class="tumbnail_wrapper">
+		<img
+			class="thumbnail"
+			src="<?= get_the_post_thumbnail_url($speaker); ?>"
+			alt="<?= $speaker->post_title; ?>"
+		>
+	</div>
+	<div class="info">
+		<h4 class="name">
+			<?= $speaker->post_title; ?>
+		</h4>
 
-	<div class="countries">
-		<?= $speaker_countries_list; ?>
+		<div class="countries">
+			<?= $speaker_countries_list; ?>
+		</div>
 	</div>
 </a>

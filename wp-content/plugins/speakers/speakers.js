@@ -1,3 +1,5 @@
+const speakers_cards = document.querySelector('.archive_speakers .cards');
+
 const filter_speakers = (form_data) => {
 	const data = {
 		positions: form_data.get('positions'),
@@ -13,7 +15,8 @@ const filter_speakers = (form_data) => {
 			countries: data.countries
 		},
 		success: (result) => {
-			$('.speakers .cards').html(result);
+			$(speakers_cards).html(result);
+			speakers_cards.classList.remove('loading');
 		}
 	})
 }
@@ -23,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	(() => {
 		const filters = document.querySelector('[data-form="filters"]');
 		filters?.addEventListener('change', e => {
+			speakers_cards.classList.add('loading');
 			const form_data = new FormData(filters);
 			filter_speakers(form_data);
 		});

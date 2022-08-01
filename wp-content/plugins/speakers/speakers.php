@@ -24,8 +24,8 @@ function speakers_styles_admin() {
 }
 
 function speakers_scripts() {
-	wp_register_script( 'speakers_filters', plugins_url( 'speakers_filters.js', __FILE__ ), [], date('h:i:s'), true );
-	wp_enqueue_script( 'speakers_filters' );
+	wp_register_script( 'speakers', plugins_url( 'speakers.js', __FILE__ ), [], date('h:i:s'), true );
+	wp_enqueue_script( 'speakers' );
 }
 
 add_action( 'wp_enqueue_scripts', 'speakers_styles' );

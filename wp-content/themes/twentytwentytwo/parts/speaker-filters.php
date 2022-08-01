@@ -3,7 +3,8 @@
 	$speaker_positions = get_terms(['taxonomy' => 'positions']);
 ?>
 
-<form class="filters" name="filters" data-form="filters">
+<aside>
+	<form class="filters" name="filters" data-form="filters">
 
 	<?php if (count($speaker_countries) > 0) { ?>
 		<select data-select="countries" name="countries">
@@ -33,4 +34,5 @@
 		</select>
 	<?php } ?>
 
-</form>
+	</form>
+</aside>
