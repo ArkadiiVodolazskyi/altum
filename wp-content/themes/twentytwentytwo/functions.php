@@ -24,3 +24,9 @@ function theme_setup() {
 	add_action( 'wp_enqueue_scripts', 'register_scripts' );
 }
 add_action( 'after_setup_theme', 'theme_setup', 9999 );
+
+function theme_register_nav_menu() {
+	add_theme_support ( 'menus' );
+	register_nav_menu( 'main', 'Main Menu' );
+}
+add_action( 'after_setup_theme', 'theme_register_nav_menu' );

@@ -7,13 +7,19 @@
 		</a>
 
 		<nav>
-			<ul class="links">
-				<li class="link"><a href="#">Home</a></li>
-				<li class="link"><a href="#">About</a></li>
-				<li class="link"><a href="#">Speakers</a></li>
-				<li class="link"><a href="#">Agenda</a></li>
-				<li class="link"><a href="#">Contact</a></li>
-			</ul>
+			<?php
+				wp_nav_menu( [
+					'theme_location'  => 'main',
+					'menu'            => 'Main',
+					'container'       => '',
+					'container_class' => '',
+					'container_id'    => '',
+					'menu_class'      => 'links',
+					'menu_id'         => '',
+					'echo'            => true,
+					'depth'           => 1,
+				]);
+			?>
 		</nav>
 
 		<a class="outer_link" href="#">
