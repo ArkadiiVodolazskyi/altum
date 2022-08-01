@@ -1,6 +1,6 @@
 <footer>
 	<div class="wrapper">
-		<a class="logo" href="#">
+		<a class="logo" href="<?= get_site_url(); ?>">
 			<svg class="interactive" width="129" height="60">
 				<use xlink:href="<?= IMG_DIR; ?>/icons.svg#logo_pediatre"></use>
 			</svg>

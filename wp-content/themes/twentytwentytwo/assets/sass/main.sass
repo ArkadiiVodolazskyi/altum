@@ -32,7 +32,7 @@ li
 
 img
 	display: block
-	max-width: 100%
+	width: 100%
 	height: auto
 
 // --------------- Variables ---------------
@@ -116,12 +116,14 @@ header
 			fill: $text-accent
 
 section.banner
+	padding: 0 50px
+	position: relative
 	.wrapper
-		position: relative
-	.info
 		position: absolute
 		z-index: 100
 		top: 0
+		left: 50%
+		transform: translate(-50%, 0)
 		padding: 60px
 		text-align: center
 		width: 100%
@@ -255,7 +257,7 @@ a.outer_link
 
 // --------------- Media queries ---------------
 
-@media (max-width: 375px)
+@media (max-width: 480px)
 	.desktop
 		display: none
 	.mobile
@@ -275,10 +277,11 @@ a.outer_link
 			display: inline-block
 
 	section.banner
+		padding: 0
 		.wrapper
-			max-width: unset
+			padding: 0
 		.info
-			padding: 20px
+			padding: 20px 0
 			text-align: left
 		.upcoming_event
 			font-size: 14px

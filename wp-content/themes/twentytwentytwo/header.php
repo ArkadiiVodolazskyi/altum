@@ -18,7 +18,7 @@
 	<div class="wrapper">
 
 		<nav>
-			<a class="logo" href="#">
+			<a class="logo" href="<?= get_site_url(); ?>">
 				<svg class="interactive" width="98" height="46">
 					<use xlink:href="<?= IMG_DIR; ?>/icons.svg#logo_pediatre"></use>
 				</svg>

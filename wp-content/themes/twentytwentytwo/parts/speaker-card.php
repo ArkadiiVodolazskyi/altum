@@ -9,6 +9,14 @@
 			return $string;
 		});
 	}
+
+	$speaker_positions = get_the_terms($speaker, 'positions');
+	if ($speaker_positions) {
+		$speaker_positions_list = array_reduce($speaker_positions, function($string, $position) {
+			$string .= '<span class="position">' . $position->name . '</span>';
+			return $string;
+		});
+	}
 ?>
 
 <a
@@ -29,6 +37,10 @@
 
 		<div class="countries">
 			<?= $speaker_countries_list; ?>
+		</div>
+
+		<div class="positions">
+			<?= $speaker_positions_list; ?>
 		</div>
 	</div>
 </a>

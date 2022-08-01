@@ -8,18 +8,19 @@
 	if ($banner_section['display_section']) {
 ?>
 	<section class="banner">
-		<div class="wrapper">
 
-			<img
-				class="desktop"
-				src="<?= $banner_section['image_desktop']['url']; ?>"
-				alt="<?= $banner_section['image_desktop']['alt']; ?>"
-			>
-			<img
-				class="mobile"
-				src="<?= $banner_section['image_mobile']['url']; ?>"
-				alt="<?= $banner_section['image_mobile']['alt']; ?>"
-			>
+		<img
+			class="desktop"
+			src="<?= $banner_section['image_desktop']['url']; ?>"
+			alt="<?= $banner_section['image_desktop']['alt']; ?>"
+		>
+		<img
+			class="mobile"
+			src="<?= $banner_section['image_mobile']['url']; ?>"
+			alt="<?= $banner_section['image_mobile']['alt']; ?>"
+		>
+
+		<div class="wrapper">
 
 			<div class="info">
 
