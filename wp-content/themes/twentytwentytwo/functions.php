@@ -1,5 +1,9 @@
 <?php
 
+add_theme_support ( 'widgets' );
+add_theme_support ( 'title-tag' );
+add_theme_support ( 'menus' );
+
 define( 'B_THEME_ROOT', get_stylesheet_directory_uri());
 define( 'CSS_DIR', B_THEME_ROOT . '/assets/css');
 define( 'JS_DIR', B_THEME_ROOT . '/assets/js');
@@ -22,12 +26,10 @@ function register_scripts() {
 function theme_setup() {
 	add_action( 'wp_enqueue_scripts', 'register_styles' );
 	add_action( 'wp_enqueue_scripts', 'register_scripts' );
-	add_theme_support ( 'widgets' );
 }
 add_action( 'after_setup_theme', 'theme_setup', 9999 );
 
 function theme_register_nav_menu() {
-	add_theme_support ( 'menus' );
 	register_nav_menu( 'main', 'Main Menu' );
 }
 add_action( 'after_setup_theme', 'theme_register_nav_menu' );
