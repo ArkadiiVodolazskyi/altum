@@ -9,7 +9,7 @@
 
 // Functionality
 
-include_once __DIR__ . '/inc/speakers_post_type.php';
+include_once __DIR__ . '/speakers_post_type.php';
 
 // Assets
 

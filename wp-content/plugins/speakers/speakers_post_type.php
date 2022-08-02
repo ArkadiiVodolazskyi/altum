@@ -97,7 +97,7 @@ function filter_speakers() {
 
 	if (count($speakers) > 0) {
 		foreach ($speakers as $speaker) {
-			get_template_part('parts/speaker-card', null, ['speaker' => $speaker]);
+			load_template(dirname( __FILE__ ) . '/pages/parts/speaker-card.php', false, ['speaker' => $speaker]);
 		}
 	} else { ?>
 		<div class="no_posts">No speakers</div>
